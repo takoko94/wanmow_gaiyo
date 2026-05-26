@@ -29,6 +29,8 @@ body{
   position:relative;
 
   font-family:'Panda',sans-serif;
+
+  background:#f6dfb7;
 }
 
 /* 背景 */
@@ -44,6 +46,8 @@ body{
 
   object-fit:cover;
 
+  opacity:0.23;
+
   z-index:-3;
 }
 
@@ -54,45 +58,64 @@ body{
   inset:0;
 
   background:
-    rgba(255,248,252,0.32);
+    rgba(255,250,245,0.30);
 
   z-index:-2;
 }
 
-/* 背景装飾 */
+/* 外枠 */
 
-.circle{
+.frame{
 
   position:absolute;
 
-  border-radius:999px;
+  inset:14px;
+
+  border-radius:28px;
 
   background:
-    rgba(255,255,255,0.35);
+    rgba(255,255,255,0.58);
+
+  border:
+    3px dashed #efb9b9;
 }
 
-.circle1{
-  width:320px;
-  height:320px;
-  left:-120px;
-  top:-120px;
+/* 背景装飾 */
+
+.star{
+
+  position:absolute;
+
+  font-size:54px;
+
+  opacity:0.45;
 }
 
-.circle2{
-  width:220px;
-  height:220px;
-  right:-60px;
-  top:140px;
+.star1{
+  left:95px;
+  top:105px;
+  color:#f6a9b6;
 }
 
-.circle3{
-  width:260px;
-  height:260px;
-  bottom:-120px;
-  right:240px;
+.star2{
+  right:120px;
+  top:120px;
+  color:#f0c18a;
 }
 
-/* 全体 */
+.star3{
+  left:110px;
+  bottom:150px;
+  color:#b5d6b7;
+}
+
+.star4{
+  right:110px;
+  bottom:130px;
+  color:#f3d58d;
+}
+
+/* メイン */
 
 .container{
 
@@ -105,38 +128,19 @@ body{
 
   align-items:center;
 
-  justify-content:center;
-
-  position:relative;
+  padding-top:18px;
 }
 
 /* ロゴ */
 
 .logo{
 
-  width:280px;
+  width:350px;
 
-  margin-bottom:10px;
+  margin-bottom:8px;
 
   filter:
-    drop-shadow(0 6px 18px rgba(255,255,255,0.9));
-}
-
-/* タイトル */
-
-.mainTitle{
-
-  font-size:68px;
-
-  color:#ff8fb0;
-
-  letter-spacing:4px;
-
-  text-shadow:
-    0 5px 0 #fff,
-    0 10px 25px rgba(255,143,176,0.32);
-
-  margin-bottom:14px;
+    drop-shadow(0 6px 16px rgba(255,255,255,0.9));
 }
 
 /* スライド */
@@ -145,19 +149,23 @@ body{
 
   width:980px;
 
-  min-height:270px;
+  height:430px;
 
   background:
-    rgba(255,255,255,0.9);
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.95),
+      rgba(255,255,255,0.90)
+    );
 
-  border-radius:42px;
+  border-radius:48px;
+
+  border:
+    7px solid #f5c1cb;
 
   padding:
-    40px
-    50px;
-
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.08);
+    42px
+    58px;
 
   display:none;
 
@@ -165,7 +173,14 @@ body{
 
   justify-content:center;
 
+  align-items:center;
+
   text-align:center;
+
+  position:relative;
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.08);
 }
 
 .slide.active{
@@ -176,27 +191,27 @@ body{
 
 .heading{
 
-  font-size:54px;
+  font-size:76px;
 
   color:#ff8fb0;
 
-  line-height:1.25;
+  line-height:1.15;
 
   text-shadow:
-    0 4px 0 #fff;
+    0 5px 0 #fff;
 
-  margin-bottom:26px;
+  margin-bottom:28px;
 }
 
 /* 本文 */
 
 .text{
 
-  font-size:40px;
+  font-size:54px;
 
-  line-height:1.6;
+  line-height:1.55;
 
-  color:#6f6259;
+  color:#7c6558;
 }
 
 /* 強調 */
@@ -205,22 +220,72 @@ body{
   color:#ff8fb0;
 }
 
-.orange{
-  color:#ff9b42;
+.green{
+  color:#67b08b;
 }
 
-.green{
-  color:#63a785;
+.orange{
+  color:#ffb053;
+}
+
+/* 区切り */
+
+.line{
+
+  width:82%;
+
+  height:4px;
+
+  border-radius:999px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f6b8c7 0px,
+      #f6b8c7 12px,
+      transparent 12px,
+      transparent 24px
+    );
+
+  margin:
+    22px
+    0;
+}
+
+/* コイン */
+
+.coin{
+
+  position:absolute;
+
+  right:80px;
+  bottom:42px;
+
+  width:130px;
+
+  filter:
+    drop-shadow(0 6px 10px rgba(0,0,0,0.12));
 }
 
 /* ボタン */
 
-.nextBtn{
+.btnArea{
 
-  margin-top:34px;
+  width:1180px;
 
-  width:260px;
-  height:74px;
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-top:20px;
+}
+
+.navBtn{
+
+  width:190px;
+  height:68px;
 
   border:none;
 
@@ -229,8 +294,8 @@ body{
   background:
     linear-gradient(
       135deg,
-      #ffbfd7,
-      #ffd98c
+      #f8b8c7,
+      #f4c98b
     );
 
   color:white;
@@ -242,18 +307,40 @@ body{
   cursor:pointer;
 
   box-shadow:
-    0 10px 20px rgba(0,0,0,0.12);
+    0 8px 18px rgba(0,0,0,0.10);
+
+  transition:0.2s;
+}
+
+.navBtn:hover{
+
+  transform:translateY(-2px);
 }
 
 /* ページ */
 
 .page{
 
-  margin-top:16px;
+  width:190px;
+  height:68px;
 
-  font-size:24px;
+  border-radius:999px;
 
-  color:#9a7b68;
+  background:
+    rgba(255,255,255,0.92);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:38px;
+
+  color:#8a7164;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08);
 }
 
 </style>
@@ -267,9 +354,14 @@ body{
 
 <div class="overlay"></div>
 
-<div class="circle circle1"></div>
-<div class="circle circle2"></div>
-<div class="circle circle3"></div>
+<div class="frame"></div>
+
+<!-- 装飾 -->
+
+<div class="star star1">✦</div>
+<div class="star star2">✦</div>
+<div class="star star3">✦</div>
+<div class="star star4">✦</div>
 
 <!-- メイン -->
 
@@ -278,12 +370,6 @@ body{
   <!-- ロゴ -->
 
   <img src="wan_logo.png" class="logo">
-
-  <!-- タイトル -->
-
-  <div class="mainTitle">
-    わんも～推し犬総選挙
-  </div>
 
   <!-- スライド1 -->
 
@@ -294,9 +380,23 @@ body{
     </div>
 
     <div class="text">
-      商品を<span class="pink">10個購入ごとに1票</span>投票可能！<br>
-      投票する犬種は<span class="pink">なんでもOK!!</span><br>
+
+      商品を<br>
+
+      <span class="pink">
+        10個購入ごとに1票
+      </span>
+
+      投票可能！<br><br>
+
+      投票する犬種は<br>
+
+      <span class="pink">
+        なんでもOK!!
+      </span><br>
+
       ミックス犬でもOK！
+
     </div>
 
   </div>
@@ -306,16 +406,20 @@ body{
   <div class="slide">
 
     <div class="heading">
-      投票数が<br>
-      1位～3位の犬種は…
+      1位〜3位の犬種は…
     </div>
 
     <div class="text">
-      <span class="orange">1位</span>：フード・ぬいぐるみ・ラテアート<br><br>
 
-      <span class="orange">2位</span>：ぬいぐるみ・ラテアート<br><br>
+      <span class="orange">1位</span>
+      フード・ぬいぐるみ・ラテアート<br><br>
 
-      <span class="orange">3位</span>：ラテアート
+      <span class="orange">2位</span>
+      ぬいぐるみ・ラテアート<br><br>
+
+      <span class="orange">3位</span>
+      ラテアート
+
     </div>
 
   </div>
@@ -330,10 +434,13 @@ body{
     </div>
 
     <div class="text">
+
       <span class="pink">
         特別なプレゼント
       </span><br>
+
       を贈呈します！
+
     </div>
 
   </div>
@@ -347,28 +454,53 @@ body{
     </div>
 
     <div class="text">
+
       投票1票ごとに<br>
+
       <span class="green">
-        わんも～コイン1枚
+        わんも〜コイン1枚
       </span>
-      プレゼント！<br><br>
+
+      プレゼント！
+
+    </div>
+
+    <div class="line"></div>
+
+    <div class="text">
 
       キャンペーン終了後に<br>
-      10枚でクッキーと交換可能！
+
+      <span class="pink">
+        10枚
+      </span>
+
+      でクッキーと交換可能！
+
     </div>
+
+    <!-- コイン -->
+
+    <img src="coin.png" class="coin">
 
   </div>
 
   <!-- ボタン -->
 
-  <button class="nextBtn" id="nextBtn">
-    次へ ▶
-  </button>
+  <div class="btnArea">
 
-  <!-- ページ -->
+    <button class="navBtn" id="prevBtn">
+      ◀ 戻る
+    </button>
 
-  <div class="page" id="page">
-    1 / 4
+    <div class="page" id="page">
+      1 / 4
+    </div>
+
+    <button class="navBtn" id="nextBtn">
+      次へ ▶
+    </button>
+
   </div>
 
 </div>
@@ -381,15 +513,30 @@ document.querySelectorAll('.slide');
 const nextBtn =
 document.getElementById('nextBtn');
 
+const prevBtn =
+document.getElementById('prevBtn');
+
 const page =
 document.getElementById('page');
 
 let current = 0;
 
-nextBtn.onclick = ()=>{
+function updateSlide(){
+
+  slides.forEach(slide=>{
+    slide.classList.remove('active');
+  });
 
   slides[current]
-  .classList.remove('active');
+  .classList.add('active');
+
+  page.innerHTML =
+    `${current+1} / ${slides.length}`;
+}
+
+/* 次へ */
+
+nextBtn.onclick = ()=>{
 
   current++;
 
@@ -398,11 +545,22 @@ nextBtn.onclick = ()=>{
     current = 0;
   }
 
-  slides[current]
-  .classList.add('active');
+  updateSlide();
+};
 
-  page.innerHTML =
-    `${current+1} / ${slides.length}`;
+/* 戻る */
+
+prevBtn.onclick = ()=>{
+
+  current--;
+
+  if(current < 0){
+
+    current =
+      slides.length - 1;
+  }
+
+  updateSlide();
 };
 
 </script>
