@@ -58,7 +58,7 @@ body{
   inset:0;
 
   background:
-    rgba(255,250,245,0.30);
+    rgba(255,250,245,0.28);
 
   z-index:-2;
 }
@@ -74,13 +74,13 @@ body{
   border-radius:30px;
 
   background:
-    rgba(255,255,255,0.58);
+    rgba(255,255,255,0.55);
 
   border:
     3px dashed #efb9b9;
 }
 
-/* 装飾 */
+/* キラキラ */
 
 .star{
 
@@ -88,11 +88,11 @@ body{
 
   font-size:52px;
 
-  opacity:0.45;
+  opacity:0.42;
 }
 
 .star1{
-  left:95px;
+  left:90px;
   top:105px;
   color:#f6a9b6;
 }
@@ -104,14 +104,14 @@ body{
 }
 
 .star3{
-  left:110px;
-  bottom:150px;
+  left:100px;
+  bottom:140px;
   color:#b5d6b7;
 }
 
 .star4{
-  right:110px;
-  bottom:130px;
+  right:100px;
+  bottom:120px;
   color:#f3d58d;
 }
 
@@ -137,7 +137,7 @@ body{
 
   width:300px;
 
-  margin-bottom:6px;
+  margin-bottom:4px;
 
   filter:
     drop-shadow(0 6px 16px rgba(255,255,255,0.9));
@@ -164,7 +164,7 @@ body{
     7px solid #f5c1cb;
 
   padding:
-    34px
+    30px
     58px;
 
   display:none;
@@ -195,21 +195,21 @@ body{
 
   color:#ff8fb0;
 
-  line-height:1.18;
+  line-height:1.05;
 
   text-shadow:
     0 5px 0 #fff;
 
-  margin-bottom:20px;
+  margin-bottom:14px;
 }
 
 /* 本文 */
 
 .text{
 
-  font-size:42px;
+  font-size:44px;
 
-  line-height:1.45;
+  line-height:1.2;
 
   color:#7c6558;
 }
@@ -248,7 +248,26 @@ body{
     );
 
   margin:
-    18px
+    14px
+    0;
+}
+
+/* 特別プレゼント */
+
+.special{
+
+  font-size:78px;
+
+  line-height:1;
+
+  color:#ff8fb0;
+
+  text-shadow:
+    0 5px 0 #fff,
+    0 10px 18px rgba(255,143,176,0.30);
+
+  margin:
+    16px
     0;
 }
 
@@ -259,7 +278,7 @@ body{
   position:absolute;
 
   right:70px;
-  bottom:42px;
+  bottom:40px;
 
   width:120px;
 
@@ -267,17 +286,9 @@ body{
     drop-shadow(0 6px 10px rgba(0,0,0,0.12));
 }
 
-/* 下ボタン */
+/* 下 */
 
 .btnArea{
-
-  position:absolute;
-
-  left:50%;
-
-  bottom:22px;
-
-  transform:translateX(-50%);
 
   width:1180px;
 
@@ -286,6 +297,8 @@ body{
   justify-content:space-between;
 
   align-items:center;
+
+  margin-top:16px;
 }
 
 .navBtn{
@@ -323,30 +336,12 @@ body{
   transform:translateY(-2px);
 }
 
-/* ページ */
+/* ダミー */
 
-.page{
+.space{
 
   width:190px;
   height:68px;
-
-  border-radius:999px;
-
-  background:
-    rgba(255,255,255,0.92);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:38px;
-
-  color:#8a7164;
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,0.08);
 }
 
 </style>
@@ -354,22 +349,16 @@ body{
 
 <body>
 
-<!-- 背景 -->
-
 <img src="haikei.png" class="bg">
 
 <div class="overlay"></div>
 
 <div class="frame"></div>
 
-<!-- 装飾 -->
-
 <div class="star star1">✦</div>
 <div class="star star2">✦</div>
 <div class="star star3">✦</div>
 <div class="star star4">✦</div>
-
-<!-- メイン -->
 
 <div class="container">
 
@@ -377,7 +366,7 @@ body{
 
   <img src="wan_logo.png" class="logo">
 
-  <!-- スライド1 -->
+  <!-- 1 -->
 
   <div class="slide active">
 
@@ -407,7 +396,7 @@ body{
 
   </div>
 
-  <!-- スライド2 -->
+  <!-- 2 -->
 
   <div class="slide">
 
@@ -430,7 +419,7 @@ body{
 
   </div>
 
-  <!-- スライド3 -->
+  <!-- 3 -->
 
   <div class="slide">
 
@@ -439,19 +428,17 @@ body{
       いちばん投票したお客様には…
     </div>
 
+    <div class="special">
+      特別なプレゼント
+    </div>
+
     <div class="text">
-
-      <span class="pink">
-        特別なプレゼント
-      </span><br>
-
       を贈呈します！
-
     </div>
 
   </div>
 
-  <!-- スライド4 -->
+  <!-- 4 -->
 
   <div class="slide">
 
@@ -497,9 +484,7 @@ body{
       ◀ 戻る
     </button>
 
-    <div class="page" id="page">
-      1 / 4
-    </div>
+    <div class="space"></div>
 
     <button class="navBtn" id="nextBtn">
       次へ ▶
@@ -520,9 +505,6 @@ document.getElementById('nextBtn');
 const prevBtn =
 document.getElementById('prevBtn');
 
-const page =
-document.getElementById('page');
-
 let current = 0;
 
 function updateSlide(){
@@ -533,9 +515,6 @@ function updateSlide(){
 
   slides[current]
   .classList.add('active');
-
-  page.innerHTML =
-    `${current+1} / ${slides.length}`;
 }
 
 /* 次へ */
