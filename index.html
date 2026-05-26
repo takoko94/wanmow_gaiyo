@@ -46,7 +46,7 @@ body{
 
   object-fit:cover;
 
-  opacity:0.23;
+  opacity:0.22;
 
   z-index:-3;
 }
@@ -69,9 +69,9 @@ body{
 
   position:absolute;
 
-  inset:14px;
+  inset:8px;
 
-  border-radius:28px;
+  border-radius:30px;
 
   background:
     rgba(255,255,255,0.58);
@@ -80,13 +80,13 @@ body{
     3px dashed #efb9b9;
 }
 
-/* 背景装飾 */
+/* 装飾 */
 
 .star{
 
   position:absolute;
 
-  font-size:54px;
+  font-size:52px;
 
   opacity:0.45;
 }
@@ -115,7 +115,7 @@ body{
   color:#f3d58d;
 }
 
-/* メイン */
+/* 全体 */
 
 .container{
 
@@ -128,16 +128,16 @@ body{
 
   align-items:center;
 
-  padding-top:18px;
+  padding-top:8px;
 }
 
 /* ロゴ */
 
 .logo{
 
-  width:350px;
+  width:300px;
 
-  margin-bottom:8px;
+  margin-bottom:6px;
 
   filter:
     drop-shadow(0 6px 16px rgba(255,255,255,0.9));
@@ -149,7 +149,7 @@ body{
 
   width:980px;
 
-  height:430px;
+  height:500px;
 
   background:
     linear-gradient(
@@ -164,7 +164,7 @@ body{
     7px solid #f5c1cb;
 
   padding:
-    42px
+    34px
     58px;
 
   display:none;
@@ -191,25 +191,25 @@ body{
 
 .heading{
 
-  font-size:76px;
+  font-size:64px;
 
   color:#ff8fb0;
 
-  line-height:1.15;
+  line-height:1.18;
 
   text-shadow:
     0 5px 0 #fff;
 
-  margin-bottom:28px;
+  margin-bottom:20px;
 }
 
 /* 本文 */
 
 .text{
 
-  font-size:54px;
+  font-size:42px;
 
-  line-height:1.55;
+  line-height:1.45;
 
   color:#7c6558;
 }
@@ -248,7 +248,7 @@ body{
     );
 
   margin:
-    22px
+    18px
     0;
 }
 
@@ -258,18 +258,26 @@ body{
 
   position:absolute;
 
-  right:80px;
+  right:70px;
   bottom:42px;
 
-  width:130px;
+  width:120px;
 
   filter:
     drop-shadow(0 6px 10px rgba(0,0,0,0.12));
 }
 
-/* ボタン */
+/* 下ボタン */
 
 .btnArea{
+
+  position:absolute;
+
+  left:50%;
+
+  bottom:22px;
+
+  transform:translateX(-50%);
 
   width:1180px;
 
@@ -278,8 +286,6 @@ body{
   justify-content:space-between;
 
   align-items:center;
-
-  margin-top:20px;
 }
 
 .navBtn{
@@ -478,8 +484,6 @@ body{
       でクッキーと交換可能！
 
     </div>
-
-    <!-- コイン -->
 
     <img src="coin.png" class="coin">
 
